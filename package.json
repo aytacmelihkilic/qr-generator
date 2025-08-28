@@ -1,6 +1,6 @@
 {
-  "name": "qr-generator",
-  "version": "0.1.0",
+  "name": "itoch-qr-generator",
+  "version": "1.0.0",
   "homepage": "https://qr.itoch.tr",
   "private": true,
   "dependencies": {
