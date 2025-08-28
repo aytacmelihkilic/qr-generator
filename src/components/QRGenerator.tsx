@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import QRCode from 'qrcode';
-import { Download, Copy, Share2, Palette, Image, Settings, Upload } from 'lucide-react';
+import { Download, Copy, Share2, Palette, Settings, Upload } from 'lucide-react';
 
 interface QRConfig {
   text: string;
