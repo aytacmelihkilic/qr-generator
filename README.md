@@ -1,30 +1,32 @@
-# QR Kod Oluşturucu
+# ITOCH QR Generator
 
 Modern ve kullanıcı dostu QR kod oluşturucu web uygulaması. URL'lerinizi, metinlerinizi ve verilerinizi hızlıca QR kodlara dönüştürün.
 
-## ✨ Özellikler
+## 🚀 Özellikler
 
-- 🔗 **QR Kod Oluşturma** - URL, metin ve veri desteği
-- 🎨 **Logo Ekleme** - Özelleştirilebilir logo yükleme
-- 🌈 **Renk Özelleştirme** - Ön plan ve arka plan renkleri
-- 📏 **Boyut Ayarlama** - Farklı boyutlarda QR kodlar
-- 💾 **Kolay İndirme** - PNG formatında kaydetme
-- 📱 **Responsive Tasarım** - Tüm cihazlarda uyumlu
-- ⚡ **Hızlı ve Modern** - React 18 ile geliştirildi
+- **QR Kod Oluşturma**: URL, metin ve veri QR kodları
+- **Logo Ekleme**: QR kodunuza özel logo ekleyin
+- **Renk Özelleştirme**: Ön plan ve arka plan renkleri
+- **Boyut Ayarlama**: 128px - 512px arası boyutlar
+- **Kolay İndirme**: PNG formatında indirme
+- **Mobil Uyumlu**: Tüm cihazlarda çalışır
+- **Paylaşım Özellikleri**: Sosyal medya paylaşımı
 
 ## 🛠️ Teknolojiler
 
 - **React 18** - Modern UI framework
 - **TypeScript** - Tip güvenliği
-- **QRCode** - QR kod oluşturma kütüphanesi
-- **Lucide React** - Modern ikonlar
-- **CSS3** - Modern styling ve animasyonlar
+- **QRCode.js** - QR kod oluşturma
+- **CSS3** - Modern tasarım
+- **Responsive Design** - Mobil uyumlu
 
-## 🚀 Kurulum
+## 📦 Kurulum
 
 ```bash
-# Repository'yi klonlayın
-git clone <repository-url>
+# Projeyi klonlayın
+git clone https://github.com/aytacmelihkilic/qr-generator.git
+
+# Proje dizinine gidin
 cd qr-generator
 
 # Bağımlılıkları yükleyin
@@ -34,72 +36,52 @@ npm install
 npm start
 ```
 
-## 📦 Build
+## 🚀 Production Build
 
 ```bash
 # Production build oluşturun
 npm run build
+
+# Build klasörünü kontrol edin
+npm run test
 ```
 
 ## 🌐 Netlify Deployment
 
-Bu proje Netlify'da deploy edilmek üzere hazırlanmıştır.
+Bu proje Netlify'da deploy edilmek üzere hazırlanmıştır:
 
-### Otomatik Deployment:
-1. GitHub repository'nizi Netlify'a bağlayın
+1. GitHub repository'yi Netlify'a bağlayın
 2. Build command: `npm run build`
 3. Publish directory: `build`
-4. Deploy!
+4. Environment variables gerekmez
 
-### Manuel Deployment:
-```bash
-# Build oluşturun
-npm run build
+## 📱 Kullanım
 
-# build klasörünü Netlify'a yükleyin
-```
+1. URL veya metin girin
+2. İsteğe bağlı logo yükleyin
+3. Renkleri özelleştirin
+4. QR kod boyutunu ayarlayın
+5. "QR Kod Oluştur" butonuna tıklayın
+6. Oluşturulan QR kodu indirin veya paylaşın
 
-## 🎯 Kullanım
+## 🎨 Tasarım
 
-1. **URL veya metin girin** - QR kod oluşturmak istediğiniz içeriği yazın
-2. **Özelleştirin** - Renkleri ve boyutu ayarlayın
-3. **Logo ekleyin** - İsteğe bağlı olarak logo yükleyin
-4. **Oluşturun** - QR kodunuzu oluşturun
-5. **İndirin** - PNG formatında kaydedin
-
-## 📱 Responsive Tasarım
-
-- ✅ Desktop (1200px+)
-- ✅ Tablet (768px - 1199px)
-- ✅ Mobile (320px - 767px)
-
-## 🔧 Geliştirme
-
-```bash
-# Geliştirme sunucusu
-npm start
-
-# Build test
-npm run build
-
-# Test
-npm test
-
-# Eject (dikkatli kullanın)
-npm run eject
-```
+- **Marka**: ITOCH
+- **Ana Renk**: Kırmızı (#DC2626)
+- **Vurgu Rengi**: Mavi (#1E3A8A)
+- **Modern ve Minimalist** tasarım
 
 ## 📄 Lisans
 
-MIT License
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 👨‍💻 Geliştirici
 
 **Aytaç Melih Kılıç**
 - 📧 Email: aytacmelihkilic@gmail.com
-- 💼 LinkedIn: [@aytacmelihkilic](https://www.linkedin.com/in/aytacmelihkilic/)
-- 🐙 GitHub: [@aytacmelihkilic](https://github.com/aytacmelihkilic)
+- 💼 LinkedIn: [Aytaç Melih Kılıç](https://www.linkedin.com/in/aytacmelihkilic/)
+- 🐙 GitHub: [aytacmelihkilic](https://github.com/aytacmelihkilic)
 
 ---
 
-❤️ **Aytaç Melih Kılıç tarafından yapılmıştır**
+❤️ ITOCH QR Generator ile QR kodlarınızı kolayca oluşturun!

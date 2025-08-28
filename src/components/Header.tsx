@@ -5,12 +5,11 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-content">
         <a href="/" className="logo">
-          <span className="logo-icon">🔢</span>
-          <span className="logo-text">QR Kod Oluşturucu</span>
+          <img src="/itoch-logo.svg" alt="ITOCH Logo" className="logo-image" />
+          <span className="logo-text">ITOCH QR Generator</span>
         </a>
         <nav>
           <ul className="nav-links">
-            <li><a href="#home">Ana Sayfa</a></li>
             <li><a href="#features">Özellikler</a></li>
             <li><a href="#about">Hakkında</a></li>
             <li><a href="#contact">İletişim</a></li>

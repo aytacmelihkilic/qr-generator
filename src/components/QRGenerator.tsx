@@ -260,7 +260,7 @@ const QRGenerator: React.FC = () => {
   return (
     <div className="qr-generator">
       <div className="generator-header">
-        <h2 className="generator-title">QR Kod Oluşturucu</h2>
+        <h2 className="generator-title">ITOCH QR Generator</h2>
         <p className="generator-subtitle">
           URL'lerinizi, metinlerinizi ve verilerinizi hızlıca QR kodlara dönüştürün
         </p>
