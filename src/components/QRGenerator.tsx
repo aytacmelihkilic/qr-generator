@@ -133,39 +133,74 @@ const QRGenerator: React.FC = () => {
     
     const link = document.createElement('a');
     link.href = qrCodeUrl;
-    link.download = `qr-code-${Date.now()}.png`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.download = `qr-kod-${Date.now()}.png`;
+    
+    // Mobile için özel işlem
+    if ('ontouchstart' in window) {
+      // Mobile cihazlarda yeni sekmede aç
+      window.open(qrCodeUrl, '_blank');
+    } else {
+      // Desktop'ta direkt indir
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
-  const copyToClipboard = async () => {
+  const copyQR = async () => {
     if (!qrCodeUrl) return;
     
     try {
-      await navigator.clipboard.writeText(qrCodeUrl);
-      alert('QR kod URL\'si panoya kopyalandı!');
+      // Canvas'tan blob oluştur
+      const response = await fetch(qrCodeUrl);
+      const blob = await response.blob();
+      
+      // Clipboard API kullan
+      if (navigator.clipboard && navigator.clipboard.write) {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            [blob.type]: blob
+          })
+        ]);
+        alert('QR kod panoya kopyalandı! 📋');
+      } else {
+        // Fallback: link oluştur
+        const link = document.createElement('a');
+        link.href = qrCodeUrl;
+        link.download = `qr-kod-${Date.now()}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        alert('QR kod indirildi! 💾');
+      }
     } catch (error) {
       console.error('Kopyalama hatası:', error);
-      alert('Kopyalama işlemi başarısız oldu!');
+      alert('QR kod kopyalanamadı. İndirme seçeneğini kullanın.');
     }
   };
 
   const shareQR = async () => {
     if (!qrCodeUrl) return;
     
-    if (navigator.share) {
-      try {
+    try {
+      // Web Share API kullan
+      if (navigator.share) {
+        const response = await fetch(qrCodeUrl);
+        const blob = await response.blob();
+        const file = new File([blob], 'qr-kod.png', { type: 'image/png' });
+        
         await navigator.share({
-          title: 'QR Kod',
-          text: 'Oluşturduğum QR kod',
-          url: qrCodeUrl,
+          title: 'QR Kod Oluşturucu',
+          text: 'QR Kod Oluşturucu ile oluşturduğum QR kod',
+          files: [file]
         });
-      } catch (error) {
-        console.error('Paylaşım hatası:', error);
+      } else {
+        // Fallback: kopyala
+        copyQR();
       }
-    } else {
-      copyToClipboard();
+    } catch (error) {
+      console.error('Paylaşım hatası:', error);
+      copyQR();
     }
   };
 
@@ -408,7 +443,7 @@ const QRGenerator: React.FC = () => {
                 İndir
               </button>
               
-              <button className="action-btn" onClick={copyToClipboard}>
+              <button className="action-btn" onClick={copyQR}>
                 <Copy size={16} />
                 Kopyala
               </button>
